@@ -23,7 +23,7 @@ class UserViewModel extends ChangeNotifier {
   Future<void> fetchUsers() async {
     _isLoading = true; /// Set loading state to true
     notifyListeners(); /// Notify listeners to update the UI
-    final response = await _apiService.get('https:///api.example.com/users');
+    final response = await _apiService.get('https://dummyjson.com/users');
     if (response is List) {
       /// Parse the response into a list of UserModel
       _users = response.map<UserModel>((user) => UserModel.fromJson(user as Map<String, dynamic>)).toList();

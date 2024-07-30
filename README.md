@@ -1,16 +1,48 @@
-# apiproject
+🚀 Overview
+This repository provides a clean, maintainable implementation of API interactions using the MVVM design pattern. By separating concerns, it enhances testability and keeps the codebase organized.
 
-A new Flutter project.
+📦 Installation
+To get started, clone this repository and install the necessary dependencies:
 
-## Getting Started
+bash
+Copy code
+git clone https://github.com/yourusername/repository-name.git
+cd repository-name
+flutter pub get
+⚙️ Usage
+API Service
+The ApiService class offers methods to perform various HTTP operations:
 
-This project is a starting point for a Flutter application.
+get(String url, {Map<String, String>? headers})
+post(String url, dynamic body, {Map<String, String>? headers})
+put(String url, dynamic body, {Map<String, String>? headers})
+delete(String url, {Map<String, String>? headers})
+📂 Folder Structure
+The project is organized as follows:
 
-A few resources to get you started if this is your first Flutter project:
+bash
+Copy code
+lib/
+├── models/       # Data models
+├── viewmodels/   # ViewModel classes
+├── views/        # UI components
+└── services/     # API services
+🛠️ API Service
+The ApiService class handles API requests and manages responses, providing a clear interface for your ViewModels.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🚨 Exceptions
+Custom exceptions for error handling:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+NetworkException
+InvalidResponseException
+UnexpectedException
+🤝 Contributing
+We welcome contributions! To get involved:
+
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature-branch).
+Open a Pull Request.
+📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.

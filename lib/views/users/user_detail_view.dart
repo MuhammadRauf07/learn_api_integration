@@ -5,13 +5,13 @@ import 'package:provider/provider.dart';
 class UserDetailView extends StatelessWidget {
   final int userId;
 
-  UserDetailView({required this.userId});
+  UserDetailView({super.key, required this.userId});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Details'),
+        title: const Text('User Details'),
       ),
       body: Consumer<UserViewModel>(
         builder: (context, viewModel, child) {
@@ -20,28 +20,29 @@ class UserDetailView extends StatelessWidget {
           }
           final user = viewModel.selectedUser;
           if (user == null) {
-            return Center(child: Text('User not found'));
+            return const Center(child: Text('User not found'));
           }
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Name: ${user.name}', style: TextStyle(fontSize: 18)),
-                Text('Email: ${user.email}', style: TextStyle(fontSize: 18)),
-                SizedBox(height: 20),
+                Text('Name: ${user.firstName}', style: const TextStyle(fontSize: 18)),
+                Text('Email: ${user.email}', style: const TextStyle(fontSize: 18)),
+
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     // Add user update logic
                   },
-                  child: Text('Edit'),
+                  child: const Text('Edit'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    viewModel.deleteUser(user.id);
+                    viewModel.deleteUser(user.id!);
                     Navigator.pop(context);
                   },
-                  child: Text('Delete'),
+                  child: const Text('Delete'),
                 ),
               ],
             ),
